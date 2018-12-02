@@ -31,7 +31,12 @@ public class GeneralTest {
 
 	@Test
 	public void by256False() {
-		assertFalse(General.isDividableBy(1024, 256));
+		assertFalse(General.isDividableBy(1025, 256));
+	}
+
+	@Test
+	public void equalsInteger() {
+		assertFalse(Integer.valueOf(1024) == Integer.valueOf(1024));
 	}
 
 	@Test
