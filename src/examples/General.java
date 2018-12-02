@@ -12,9 +12,9 @@ public class General {
 	public static Boolean isDividableBy(Integer in, Integer by) {
 		Integer zero = 0;
 
-		Boolean isOdd = (in % by == zero);
+		Boolean isEven = zero.equals(in % by);
 
-		return isOdd;
+		return isEven;
 	}
 
 	enum TeaKind {
