@@ -1,7 +1,7 @@
 package examples;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 
 public class General {
 
@@ -39,11 +39,11 @@ public class General {
 
 	}
 
-	public static BigInteger sum(List<Integer> ints) {
+	public static BigInteger sum(Collection<Integer> ints) {
 		BigInteger sum = BigInteger.ZERO;
 
-		for (int ii = 0; ii < ints.size(); ii++) {
-			sum = sum.add(BigInteger.valueOf(ints.get(ii)));
+		for (var ii : ints) {
+			sum = sum.add(BigInteger.valueOf(ii));
 		}
 
 		return sum;
