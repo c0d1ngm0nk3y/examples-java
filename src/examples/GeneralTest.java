@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import examples.General.TeaKind;
+
 @RunWith(JUnit4.class)
 public class GeneralTest {
 
@@ -41,22 +43,17 @@ public class GeneralTest {
 
 	@Test
 	public void blackTea() throws Exception {
-		assertEquals(100, General.getTeaTemperature("BLACK"));
+		assertEquals(100, General.getTeaTemperature(TeaKind.BLACK));
 	}
 
 	@Test
-	public void blackTeaMixedCase() throws Exception {
-		assertEquals(100, General.getTeaTemperature("Black"));
-	}
-
-	@Test
-	public void herbalTeaNewString() throws Exception {
-		assertEquals(100, General.getTeaTemperature(new String("HERBAL")));
+	public void herbalTea() throws Exception {
+		assertEquals(100, General.getTeaTemperature(TeaKind.HERBAL));
 	}
 
 	@Test
 	public void greenTea() throws Exception {
-		assertEquals(80, General.getTeaTemperature("GREEN"));
+		assertEquals(80, General.getTeaTemperature(TeaKind.GREEN));
 	}
 
 	@Test

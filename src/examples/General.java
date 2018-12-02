@@ -17,20 +17,23 @@ public class General {
 		return isOdd;
 	}
 
-	public static int getTeaTemperature(String kind) throws Exception {
-		kind.toUpperCase();
+	enum TeaKind {
+		BLACK, WHITE, OOLONG, HERBAL, GREEN
+	}
 
-		if (kind == "BLACK") {
+	public static int getTeaTemperature(TeaKind kind) throws Exception {
+
+		switch (kind) {
+		case BLACK:
+		case HERBAL:
 			return 100;
-		} else if (kind == "GREEN") {
+		case GREEN:
 			return 80;
-		} else if (kind == "WHITE") {
+		case WHITE:
 			return 85;
-		} else if (kind == "OOLONG") {
+		case OOLONG:
 			return 90;
-		} else if (kind == "HERBAL") {
-			return 100;
-		} else {
+		default:
 			throw new Exception("Unknown tea");
 		}
 
