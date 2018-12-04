@@ -3,30 +3,45 @@ package examples;
 public class IntStack {
 
 	public IntStack(int size) {
-
+		nextIndex = 0;
+		array = new int[size];
 	}
 
 	// show the top element
-	public int peek() // throws
+	public int peek() throws StackIsEmptyException // throws
 	{
-		return 0;
+		if (0 == size()) {
+			throw new StackIsEmptyException();
+		}
+
+		return array[nextIndex - 1];
 	}
 
 	// return number of stored elements
 	public int size() {
-		return 0;
+		return nextIndex;
 	}
 
 	// store an element
-	public void push(int number) // throws
+	public void push(int number) throws StackIsFullException // throws
 	{
-		return;
+		if (size() == array.length) {
+			throw new StackIsFullException();
+		}
+
+		array[nextIndex++] = number;
 	}
 
 	// return and remove the last stored element
-	public int pop() // throws
+	public int pop() throws StackIsEmptyException // throws
 	{
-		return 0;
+		if (size() == 0) {
+			throw new StackIsEmptyException();
+		}
+
+		return array[--nextIndex];
 	}
 
+	private int[] array;
+	int nextIndex = 0;
 }
