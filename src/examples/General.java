@@ -21,7 +21,7 @@ public class General {
 		BLACK, WHITE, OOLONG, HERBAL, GREEN
 	}
 
-	public static int getTeaTemperature(TeaKind kind) throws Exception {
+	public static int getTeaTemperature(TeaKind kind) {
 
 		switch (kind) {
 		case BLACK:
@@ -34,7 +34,7 @@ public class General {
 		case OOLONG:
 			return 90;
 		default:
-			throw new Exception("Unknown tea");
+			return -1;
 		}
 
 	}
