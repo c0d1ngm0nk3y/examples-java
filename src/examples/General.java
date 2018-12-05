@@ -1,7 +1,7 @@
 package examples;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.ArrayList;
 
 public class General {
 
@@ -36,7 +36,7 @@ public class General {
 
 	}
 
-	public static BigInteger sum(List<Integer> ints) {
+	public static BigInteger sum(ArrayList<Integer> ints) {
 		BigInteger sum = BigInteger.ZERO;
 
 		for (int ii = 0; ii < ints.size(); ii++) {
